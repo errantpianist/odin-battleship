@@ -3,9 +3,12 @@ import Ship from '../Ship/Ship';
 export default class Gameboard {
   constructor() {
     this.grid = Array.from({ length: 10 }, () =>
-      Array(10).fill({ ship: null, hit: null })
+      Array(10)
+        .fill()
+        .map(() => ({ ship: null, hit: null }))
     );
     this.ships = [];
+    this.hits = 0;
   }
   placeShip(x, y, length, direction) {
     const ship = new Ship(length);
@@ -21,6 +24,7 @@ export default class Gameboard {
     }
   }
   receiveAttack(x, y) {
+    this.hits += 1;
     if (this.grid[y][x].ship) {
       this.grid[y][x].ship.hit();
       this.grid[y][x].hit = 'hit';

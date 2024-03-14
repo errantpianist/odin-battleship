@@ -20,6 +20,7 @@ describe('Gameboard placeShip', () => {
     expect(gameboard.grid[0][1].ship).toBeInstanceOf(Ship);
     expect(gameboard.grid[0][2].ship).toBeInstanceOf(Ship);
     expect(gameboard.grid[0][3].ship).toBeInstanceOf(Ship);
+    expect(gameboard.grid[0][4].ship).toBe(null);
   });
   it('can place a ship vertically', () => {
     const gameboard = new Gameboard();
@@ -28,6 +29,7 @@ describe('Gameboard placeShip', () => {
     expect(gameboard.grid[1][0].ship).toBeInstanceOf(Ship);
     expect(gameboard.grid[2][0].ship).toBeInstanceOf(Ship);
     expect(gameboard.grid[3][0].ship).toBeInstanceOf(Ship);
+    expect(gameboard.grid[4][0].ship).toBe(null);
   });
   it('can place a ship at different coordinates', () => {
     const gameboard = new Gameboard();
@@ -77,7 +79,7 @@ describe('Gameboard receiveAttack', () => {
     gameboard.receiveAttack(0, 0);
     gameboard.receiveAttack(0, 1);
     expect(gameboard.grid[0][0].hit).toBe('miss');
-    expect(gameboard.grid[0][1].hit).toBe('miss');
+    expect(gameboard.grid[1][0].hit).toBe('miss');
   });
 });
 
