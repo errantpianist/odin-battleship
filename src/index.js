@@ -1,6 +1,6 @@
-import "./style.css";
+import './style.css';
+import gameLoop from './GameLoop/GameLoop';
 
-const contentContainer = document.getElementById("content");
-const testContent = document.createElement("p");
-testContent.innerHTML = "Hello from Webpack!";
-contentContainer.appendChild(testContent);
+const contentContainer = document.getElementById('content');
+
+gameLoop();

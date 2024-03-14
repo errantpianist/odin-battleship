@@ -11,3 +11,37 @@ body {
   text-align: center;
   padding: 5em;
 }
+
+#game-board {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+}
+.square {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.hit {
+  background-color: red;
+}
+.miss {
+  background-color: blue;
+  content: "\1F4A5";
+}
+.ship::before {
+  content: "\1F6A3";
+  font-size: 1.5em;
+}

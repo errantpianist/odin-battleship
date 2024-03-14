@@ -3,14 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project</title>
+  <title>Battleship</title>
   <script src="./bundle.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="content"></div>
+  <div id="content">
+    <h1>Battleship</h1>
+    <div id="game-board">
+      <div id="player-board">
+        <h2>Your Board</h2>
+        <div id="player-grid" class="grid"></div>
+      </div>
+      <div id="computer-board">
+        <h2>Computer's Board</h2>
+        <div id="computer-grid" class="grid"></div>
+      </div>
+    </div>
+    <div id="controls">
+      <button id="start-game">Start Game</button>
+      <button id="reset-game">Reset Game</button>
+    </div>
+  </div>
   
 </body>
 </html>
