@@ -1,3 +1,5 @@
+import win from './win';
+
 export default function renderGameboard(player1, player2) {
   console.log('Hi from renderGameboard');
   for (let i = 0; i < arguments.length; i++) {
@@ -22,10 +24,16 @@ export default function renderGameboard(player1, player2) {
           if (playerName === 'computer') {
             player1.takeTurn(player2.gameboard, col, row);
             renderGameboard(player1, player2);
+            if (player2.gameboard.allSunk()) {
+              win(player1);
+            }
             setTimeout(() => {
               player2.takeTurn(player1.gameboard);
               renderGameboard(player1, player2);
             }, 1000);
+            if (player1.gameboard.allSunk()) {
+              win(player2);
+            }
           }
         });
 
